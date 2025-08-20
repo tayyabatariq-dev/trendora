@@ -1,82 +1,111 @@
-/* Navbar overall */
+/* Navbar Base */
 .navbar {
-  background-color: rgb(53, 50, 50);
-  color: #ccc;
-  padding: 12px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  padding: 15px 40px;
+  background: #222;
+  color: white;
+  position: relative;
+  z-index: 1000;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
 }
 
-/* Links container */
+/* Links */
 .nav-links {
   display: flex;
-  gap: 1.8rem;
-  align-items: center;
+  gap: 20px;
 }
 
-/* Default nav links */
 .nav-link {
   text-decoration: none;
-  color: #ccc;
+  color: white;
   font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.25s ease-in-out;
-  position: relative;
-  padding: 5px 0;
+  transition: 0.3s;
 }
 
-.nav-link:hover {
-  color: #f05a28;
-}
-
+.nav-link:hover,
 .nav-link.active {
-  color: #f05a28;
-  font-weight: 600;
+  color: #ff6600;
 }
 
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #f05a28;
-  border-radius: 2px;
-}
-
-/* Special Login Button */
+/* Login Button */
 .login-btn {
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: #ff6600;
+  color: white;
   text-decoration: none;
-  background: #f05a28;
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 6px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .login-btn:hover {
-  background: #d94e21;
-  transform: translateY(-2px);
+  background: #e65c00;
 }
 
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
-/* ================== Footer ================== */
-/* ================== Footer ================== */
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Rotate animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #333;
+    width: 220px;
+    padding: 15px;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-link,
+  .login-btn {
+    width: 100%;
+    padding: 10px 0;
+    padding-left: 20px;
+  }
+}
+
+/*========== Footer ================== */
 .footer {
   background-color: rgb(53, 50, 50); /* Same as navbar */
   color: #ccc;
