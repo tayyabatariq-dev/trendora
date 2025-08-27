@@ -4,7 +4,7 @@ import { href, Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-r  x from-pink-100 via-pink-200 to-pink-100 text-center py-24 px-6 "
+    <section className="bg-gradient-to-r  x from-pink-100 via-pink-200 to-pink-100 text-center py-24 px-6"
      style={{ backgroundImage: "url('https://thumbs.dreamstime.com/b/vibrant-joyful-scene-colorful-balloons-confetti-presents-set-against-backdrop-childrens-birthday-party-323977407.jpg')" }}>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold text-pink-700 mb-6 leading-tight">
